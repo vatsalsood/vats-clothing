@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-import HomePage from "./HomePage/homepage";
-import "./HomePage/homepage.styles.scss";
+import HomePage from "./pages/HomePage/homepage";
+import "./pages/HomePage/homepage.styles.scss";
 
 function App() {
   return (
