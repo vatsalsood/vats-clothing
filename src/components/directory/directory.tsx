@@ -1,18 +1,11 @@
+//@ts-nocheck
 import React from "react";
 import MenuItem from "../menu-item/menu-item";
 import "./directory.scss";
 
 class Directory extends React.Component {
-  state: {
-    sections: {
-      title: string;
-      imageUrl: string;
-      id: number;
-      size?: string;
-    }[];
-  };
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     this.state = {
       sections: [
         {
@@ -45,12 +38,15 @@ class Directory extends React.Component {
       ],
     };
   }
-
   render() {
     return (
       <div className="directory-menu">
-        {this.state.sections.map(({ title, imageUrl, id }) => {
-          <MenuItem key={id} title={title}></MenuItem>;
+        {this.state.sections.map(({ title, imageUrl, id, size }) => {
+          return (
+            <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}>
+              {" "}
+            </MenuItem>
+          );
         })}
       </div>
     );
