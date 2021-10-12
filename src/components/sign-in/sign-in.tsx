@@ -1,4 +1,6 @@
+//@ts-nocheck
 import React from "react";
+import FormInput from "../form-input/form-input";
 import "./sign-in.scss";
 
 class SignIn extends React.Component {
@@ -7,7 +9,7 @@ class SignIn extends React.Component {
     this.state = { email: "", password: "" };
   }
 
-  handleSubmit = (e: { preventDefault: () => void }) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.setState({ email: "", password: "" });
   };
@@ -22,21 +24,21 @@ class SignIn extends React.Component {
       <div className="sign-in">
         <h2>I alreadu have an account</h2>
         <span>Sign in with your email and password</span>
-        <form onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input
+        <form onSubmit={this.handleSubmit}>
+          <FormInput
             type="email"
             name="email"
             value={this.state.email}
             required
-            onChange={this.handleChange}
+            label="email"
+            handleChange={this.handleChange}
           />
-          <label>Password</label>
-          <input
+          <FormInput
             type="password"
             name="password"
+            label="password"
             value={this.state.password}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             required
           />
           <input type="submit" value="submit form" />
@@ -45,3 +47,5 @@ class SignIn extends React.Component {
     );
   }
 }
+
+export default SignIn;
