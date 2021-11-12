@@ -2,15 +2,17 @@ import React from "react";
 import "./form-input.scss";
 
 interface FormInputProps {
-  handleChange: () => {};
+  type?: string;
+  name?: string;
+  onChange: () => {};
   label: string;
   value: string;
 }
 
-const FormInput = ({ handleChange, label, ...otherProps }: FormInputProps) => {
+const FormInput = ({ onChange, label, ...otherProps }: FormInputProps) => {
   return (
     <div className="group">
-      <input className="form-input" onChange={handleChange} {...otherProps} />
+      <input className="form-input" onChange={onChange} {...otherProps} />
       {label ? (
         <label
           className={`${
