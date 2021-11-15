@@ -14,8 +14,8 @@ interface SignUpStateProps {
 interface SignUpProps {}
 
 class SignUp extends React.Component<SignUpProps, SignUpStateProps> {
-  constructor(props: any) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       displayName: "",
@@ -61,46 +61,43 @@ class SignUp extends React.Component<SignUpProps, SignUpStateProps> {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className="sign-up">
-        <h2 className="title">
-          <span>
-            <form onSubmit={this.handleSubmit} className="sign-up-form">
-              <FormInput
-                type="text"
-                name="displayName"
-                value={displayName}
-                onChange={this.handleChange}
-                label="Email"
-                required
-              ></FormInput>
-              <FormInput
-                type="email"
-                name="email"
-                value={email}
-                onChange={this.handleChange}
-                label="Email"
-                required
-              ></FormInput>
-              <FormInput
-                type="password"
-                name="Password"
-                onChange={this.handleChange}
-                value={password}
-                label="Password"
-                required
-              ></FormInput>
-              <FormInput
-                type="password"
-                name="ConfirmPassword"
-                value={confirmPassword}
-                onChange={this.handleChange}
-                value={confirmPassword}
-                label="Confirm Password"
-                required
-              ></FormInput>
-              <CustomButton type="submit">Sign up</CustomButton>
-            </form>
-          </span>
-        </h2>
+        <h2 className="title">I do not have a account</h2>
+        <span>Sign up with your email and password</span>
+        <form onSubmit={this.handleSubmit} className="sign-up-form">
+          <FormInput
+            type="text"
+            name="displayName"
+            value={displayName}
+            onChange={this.handleChange}
+            label="Display name"
+            required
+          ></FormInput>
+          <FormInput
+            type="email"
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+            label="Email"
+            required
+          ></FormInput>
+          <FormInput
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+            value={password}
+            label="Password"
+            required
+          ></FormInput>
+          <FormInput
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={this.handleChange}
+            label="Confirm Password"
+            required
+          ></FormInput>
+          <CustomButton type="submit">Sign up</CustomButton>
+        </form>
       </div>
     );
   }
